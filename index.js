@@ -77,10 +77,15 @@
 
 let arr = [12, 13, 14, 23, 34, 54]; //34
 
+
 let firstLargest = -Infinity;
 let secondLargest = -Infinity;
 
 function secondLargestArray(arr) {
+    if(arr.length<2){
+    return null
+}
+
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > firstLargest) {
       secondLargest = firstLargest;
