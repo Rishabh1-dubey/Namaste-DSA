@@ -56,19 +56,42 @@
 
 // find the smallest number in your array
 
-let arr = [10, 2, 3, 4, 5, 6, 67, 889];
+// let arr = [10, 2, 3, 4, 5, 6, 67, 889];
 
-let smallest = arr[0];
+// let smallest = arr[0];
 
-function smallestNumber(arr) {
+// function smallestNumber(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (smallest > arr[i]) {
+//       smallest = arr[i];
+//     }
+//   }
+//   return smallest
+// }
+
+// let result = smallestNumber(arr)
+// console.log(result)
+
+// ---------------------------------------------------------
+//find the second largest Number in the array'
+
+let arr = [12, 13, 14, 23, 34, 54]; //34
+
+let firstLargest = -Infinity;
+let secondLargest = -Infinity;
+
+function secondLargestArray(arr) {
   for (let i = 0; i < arr.length; i++) {
-    if (smallest > arr[i]) {
-      smallest = arr[i];
+    if (arr[i] > firstLargest) {
+      secondLargest = firstLargest;
+      firstLargest = arr[i];
+    } else if (arr[i] > secondLargest) {
+      secondLargest = arr[i];
     }
   }
-  return smallest
+return firstLargest ,secondLargest;
 }
 
-
-let result = smallestNumber(arr)
-console.log(result)
+let result = secondLargestArray(arr)
+console.log('the second largest number is ',result)
+console.log('the fist largest number is ',firstLargest)
